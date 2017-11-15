@@ -1,0 +1,45 @@
+@Directive({
+  selector?: string
+  inputs?: string[]
+  outputs?: string[]
+  host?: {[key: string]: string}
+  providers?: Provider[]
+  exportAs?: string
+  queries?: {[key: string]: any}
+})
+
+Metadata Properties:
+    exportAs - name under which the component instance is exported in a template. Can be given a single name or a comma-delimited list of names.
+    host - map of class property to host element bindings for events, properties and attributes
+    inputs - list of class property names to data-bind as component inputs
+    outputs - list of class property names that expose output events that others can subscribe to
+    providers - list of providers available to this component and its children
+    queries - configure queries that can be injected into the component
+    selector - css selector that identifies this component in a template
+
+// directive
+@Directive({
+  selector: 'interval-dir',
+  outputs: ['everySecond', 'five5Secs: everyFiveSeconds']
+})
+class IntervalDir {
+  everySecond = new EventEmitter();
+  five5Secs = new EventEmitter();
+
+  constructor() {
+    setInterval(() => this.everySecond.emit("event"), 1000);
+    setInterval(() => this.five5Secs.emit("event"), 5000);
+  }
+}
+
+@Component({
+  selector: 'app',
+  template: `
+    <interval-dir (everySecond)="everySecond()" (everyFiveSeconds)="everyFiveSeconds()">
+    </interval-dir>
+  `
+})
+class App {
+  everySecond() { console.log('second'); }
+  everyFiveSeconds() { console.log('five seconds'); }
+}

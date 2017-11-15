@@ -1,0 +1,55 @@
+@Component({
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    providers: [Globals]
+})
+export class UsersComponent {}
+
+<my-app></my-app>
+
+
+
+// directive
+@Directive({
+  selector: 'interval-dir',
+  outputs: ['everySecond', 'five5Secs: everyFiveSeconds']
+})
+class IntervalDir {
+  everySecond = new EventEmitter();
+  five5Secs = new EventEmitter();
+
+  constructor() {
+    setInterval(() => this.everySecond.emit("event"), 1000);
+    setInterval(() => this.five5Secs.emit("event"), 5000);
+  }
+}
+
+@Component({
+  selector: 'app',
+  template: `
+    <interval-dir (everySecond)="everySecond()" (everyFiveSeconds)="everyFiveSeconds()">
+    </interval-dir>
+  `
+})
+class App {
+  everySecond() { console.log('second'); }
+  everyFiveSeconds() { console.log('five seconds'); }
+}
+
+
+
+@Pipe({ name: 'ellipsis' })
+export class EllipsisPipe implements PipeTransform { }
+
+
+
+
+@Injectable()
+export class HeroService {
+  getHeroes() {
+    return Promise.resolve(HEROES);
+  }
+}
+
+providers
