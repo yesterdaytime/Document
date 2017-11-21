@@ -30,11 +30,15 @@ find path of config file:
 find action log:
 	git reflog
 
+storage code
+	git stash 
+get code 
+	git stash  pop
 
+gerrit install:
+	brew install gerrit-cli
 
-
-
-git issue
+gerrit issue
     1、chang-id issue：
 			gitdir=$(git rev-parse --git-dir); scp -p -P $(port) $(gitpath):hooks/commit-msg ${gitdir}/hooks/
 			port and gitpath is same with the ssh config 
