@@ -1,23 +1,40 @@
-git 流程
+git process
 	git status
 	git diff
 	git add rm
 	git commit
 	git push origin master
-git 冲突解决：
+git conflict:
 	git pull origin master
+	git checkout test
+	git rebase master
+	//merge code
+	git rebase --continue
+	git push
+
+git alias
+	$ git config --global alias.co checkout
+	$ git config --global alias.br branch
+	$ git config --global alias.ci commit
+	$ git config --global alias.st status
+	$ git config --global alias.last 'log -1 HEAD'
+	$ git config --global alias.unstage 'reset HEAD --'
+you can add alias in .gitconfig:
+	there are two method to pass arguments
+	pushl = "!sh -c \"git push origin $(git branch-name):$@\""
+	or
+	pushl = "!f(){ git push origin $(git branch-name):$1 };f"
+
+find path of config file:
+	git config -l --show-origin
+find action log:
+	git reflog
 
 
 
 
 
-
-
-
-
-
-
-
-git中遇到的问题	
-    1、chang-id问题：
-			gitdir=$(git rev-parse --git-dir); scp -p -P 29418 mingpeiw@tempest-reviews.eng.vmware.com:hooks/commit-msg ${gitdir}/hooks/
+git issue
+    1、chang-id issue：
+			gitdir=$(git rev-parse --git-dir); scp -p -P $(port) $(gitpath):hooks/commit-msg ${gitdir}/hooks/
+			port and gitpath is same with the ssh config 
