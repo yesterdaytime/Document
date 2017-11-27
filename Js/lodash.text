@@ -1,0 +1,203 @@
+chunk(arr, num) 将数组分成长度为num的数组，组成新的数组
+  n.大块；厚块；厚片；相当大的量
+  Web组块；区块；数据块
+
+compact(arr) 只保留非空值
+  n.契约；协议；小汽车；带镜小粉盒
+  adj.小型的；袖珍的；紧凑的；体积小的
+  v.把…紧压在一起（或压实）
+  Web紧密的；紧凑型；简洁的
+
+concat(arr, arr) 合并另个arr
+
+difference(arr, arr)  前一个arr中不同于后一个arr的值
+
+drop(arr, ?num) 丢弃掉第一个值或第num个值之前的所有值
+
+fill(arr, val) 填充
+
+flatten(arr) 将数组中的数组提取一级出来（Deep将多维数组变成一维， Depth 可以选择提取层级数）
+
+fromPairs([[key, val],[key, val]]) 将数组变成对象
+
+initial(arr) Gets all but the last element of array.
+
+intersection(arr, arr) 获取两个数组的交集
+
+nth(arr, n) n: 正数，第n个值，负数： 从有开始数，第n个值
+
+pull(arr, ...vals) 从数组中删除vals中包含的值，空值除外 pullAll(arr, arr) 删除第一个数组中存在第二个数组的值
+
+reverse(arr) 数组变成逆序
+
+sortedIndex(arr, val) 用二分法计算出数据可以插入的位置, arr为有序数组
+
+sortedUniq(arr) 有序数组去重
+
+tail(arr) 获取去除arr中第一个值的数组
+
+take(arr, n) 和drop相反，获去从开始到n的值
+
+union(arrs) 获取arrs 并集
+
+uniq(arr) arr去重
+
+zip(arrs) 将arrs对应下标的值组成数组，放到一个数组中
+
+unzip() zip()相反的操作
+
+without(arr, ...vals) 过滤掉vals的值，和pull相似，返回新数组，不改变原有arr
+
+xor(arrs) 并集 - 交集
+
+countBy(arr, rule) 根据groupBy原则生成数组，统计数据长度
+
+flatMap(arr, func) flatten 和 map  组合
+
+invokeMap(arrs, oper) 多个数组单独执行相同的操作，结果放在同一个数组中
+
+keyBy(array, func) 将数组转化为对象，key为func返回值，object为数组对应的值
+
+partition(arr, func) 根据funct，返回满足func和不满足func两个数组
+
+reduce(arr, func) 根据arr 前一次结果和当前值进行func操作，返回最终值
+
+reject 和filter相同功能，返回为不满足条件的
+
+sample(arr) 从arr中随机取
+
+shuffle(collection) 随机顺序
+
+curry(func) func参数可以灵活化 (a, b, c) => ()()() => (a,b)(c) => (a)(_, c)(b)
+
+bind(func, this, ...args) 对function进行参数绑定
+
+debounce(func, wait) 点击wait milliseconds，没有时间提交，执行func
+
+throttle(func, wait) 点击执行func，wait milliseconds，不能提交
+
+defer(func, ...args) 调用的时候才执行function
+
+flip(func) 对func的参数进行reversed 
+
+memoize(func, resolver); 对func返回值进行存储，返回object为key， values数组为value，有方法：clear, delete, get, has, and set
+用法： var values = _.memoize(_.values);
+      values(obj);
+      values.cache.set(object, ['a', 'b']);
+
+negate(func): 否定的，无效的, !func func 返回true or false
+
+overArgs(func, ...args), 对func中的参数进行转化
+
+partial(func, ...args)|partialRight(func, ...args) 和bind类似，没有this参数
+
+rearg(func, indexes) 对func参数进行下标定序，参数以下标为准
+
+unary(func): 
+
+escape(str) 对str转化成html相关的entities
+
+wrap(func1, func(func1, ...args)) return new function
+
+castArray(value) 转化value(如果不为数组)为数组
+
+conforms(source)| conformsTo(obj, source):  返回true or false，判断属性的值满足一定的条件
+
+eq(==), gt(>), gte(>=), lt(<), lte(<=)
+
+add(+) ceil(进一) divide(/) floor(保留位数) mean(avg 平均数) multiply(*) round(四舍五入) subtract(-)
+
+clamp(number, lower, upper) 在lower和upper中获取number，当number不在范围内，取最接近的值
+
+inRange(number, start ? start : 0, end) number在start and end范围中
+
+random(start, end) 随机输出范围中的一个数
+
+defaults(obj, source)|defaultsDeep assign to obj如果属性为undefined
+
+findKey(obj, func): 查找满足func的objectKey
+
+functions(object) function中参数组成的数组
+
+omit(obj, arr) 去除arr对应的key组成的对象
+
+pick(obj, arr) 抽取arr对应的key组成对象
+
+merge(obj,obj) 合并两个obj
+
+set(object, path, value) 设置值
+
+result(object, path, [defaultValue]) 获取值
+
+unset(obj, path): 删除属性
+
+transform(obj, func) 和reduce用法相同
+
+chain(obj) 将obj变成lodash obj，可以应用lodash方法，最后返回用value()取值
+
+tap(val, interceptor) This method invokes interceptor and returns value
+
+at(obj, ...path) 获取path对应的值 
+
+camelCase() 转化为：驼峰式命名
+ Web 驼峰格式；驼峰字；驼峰式大小写
+
+capitalize() 首字母大写
+[ˈkæpɪtəlaɪz]
+v.用大写字母书写（或印刷）；把…首字母大写；变卖资产；变现
+Web资本化；首字大写；利用
+
+kebabCase() -命名
+
+lowerCase() 小写 空格区分命名
+
+lowerFirst(str) 首字母小写
+
+pad([string=''], [length=0], [chars=' '])| padEnd| padStart Pads string on the left and right sides if it's shorter than length 和trim相反
+
+replace([string=''], pattern, replacement)
+
+snakeCase([string='']) 小写下划线命名
+v.蛇行；曲折前行；拖；拉
+n.蜿蜒；【动】蛇；〈比喻〉奸诈之人；卑鄙之人
+Web贪吃蛇；贪食蛇；斯内克
+
+words([string=''], [pattern]) 除去数组中的特殊字符
+
+attempt(func, [args]) Attempts to invoke func, returning either the result or the caught error object
+UK [ə'tempt]
+n.尝试；试图；企图；杀人企图
+v.尝试；试图；努力
+Web袭击
+  
+truncate([string=''], [options={}]) css text-overflow 
+  [string=''] (string): The string to truncate.
+  [options={}] (Object): The options object.
+  [options.length=30] (number): The maximum string length.
+  [options.omission='...'] (string): The string to indicate text is omitted.
+  [options.separator] (RegExp|string): The separator pattern to truncate to.
+US [ˈtrʌŋˌkeɪt]
+UK [trʌŋˈkeɪt]
+vt.删节（尤指掐头或去尾）
+adj.截短的；被删节的
+Web截断；清空表里的所有记录；截形
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

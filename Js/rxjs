@@ -1,21 +1,25 @@
 debounce()| debounceTime(n) 从第一次点击后间隔默认或者ms后，输出Observable中最后一个值，
+
 audit()| auditTime(n) 每间隔默认或者n秒输出Observable中最后一个值
+
 debounce 和 audit 的不同点： https://stackoverflow.com/questions/39184789/difference-between-audit-and-debounce-in-rxjs
 
 
 repeat(number)| repeatWhen(notifier: function(notifications: Observable): Observable): 重复输出n次或者知道满足某条件后停止
+
 retry(number)| retryWhen(notifier: function(errors: Observable): Observable) 出现异常时重复n次或者进行某项操作后重复
 
 sample| sampleTime 对于source Observable隔一段时间取样，输出取样间隔内最后emit的值， source Observable结束，sample Observable将不会输出source Observable最后一个值
 
 scan(source Observable last emit, current emit value)将source Observable最后提交的值和当前的值组成参数，赋值给function，每次操作都会输出
+
 reduce(source Observable last emit, current emit value) 将source Observable最后提交的值和当前的值组成参数，赋值给function，只输出最终结果
 
 sequenceEqual(compareTo: Observable, comparor: function): Observable 比较两个Observable
 
 share() share all action befor subscribe
 
-single() 获取唯一值，如果存在过个，存在异常
+single() 获取唯一值，如果存在多个，存在异常,
 
 skip(n) 跳过前n个值
 
@@ -27,4 +31,21 @@ takeUntil 获取值，直到Until位置
 throttle|throttleTime 获取一点时间内提交的所有值的第一次提交 和debounce相反
 
 exhaust| exhaustMap Observable-of-Observables 中，舍弃掉前一个Observable结束前提交的Observable,直到Observable结束
+
+partition(function): It's like filter, but returns two Observables: one like the output of filter, and the other with values that did not pass the condition.
+
+pairwise(): Puts the current value and previous value together as an array, and emits that.
+
+pluck(properties: string) :Like map, but meant only for picking one of the nested properties of every emitted object.
+将Observable中的数组赋给properties组成object
+
+race() Observable-of-Observables执行最先执行的Observable
+
+multicast() 只有调用connect()才会获得执行，提交的subscribe并不会提交Observable
+
+publish() return ConnectableObservable 执行connect()才会提交
+
+materialize() 将值封装成对象Notification
+
+dematerialize() 将对象Notification解析成值
 
