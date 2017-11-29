@@ -1,0 +1,11 @@
+[alias]
+	last = log -1 HEAD
+	co = checkout
+	br = branch
+	st = status
+	ci = commit
+	pl = pull origin master
+	com = checkout master
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	pushl = "!sh -c \"git push -f origin $(git branch-name):$@\""
+	fetchr = "!sh -c \"git fetch origin $@ && git checkout FETCH_HEAD\""

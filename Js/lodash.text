@@ -121,7 +121,7 @@ functions(object) function中参数组成的数组
 
 omit(obj, arr) 去除arr对应的key组成的对象
 
-pick(obj, arr) 抽取arr对应的key组成对象
+  (obj, arr) 抽取arr对应的key组成对象
 
 merge(obj,obj) 合并两个obj
 

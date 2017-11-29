@@ -1,0 +1,16 @@
+数组：
+  changes the contents of an array：
+    splice()
+    copyWithin(start, sourceStart);
+    fill()
+    pop()
+    reverse()
+    shift()
+    unshift()
+    sort()
+  not changes the contents of an array：  
+    slice()
+    filter()
+    some()
+    find()
+    every()
