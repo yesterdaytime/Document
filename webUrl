@@ -1,0 +1,62 @@
+nvm   https://github.com/creationix/nvm/blob/master/README.md
+
+npm   https://www.npmjs.com/
+      http://registry.npm.taobao.org/
+      http://r.cnpmjs.org/
+
+  命令： npm --registry https://registry.npm.taobao.org install express （临时使用）
+        npm config set registry https://registry.npm.taobao.org (永久使用)
+
+        // 配置后可通过下面方式来验证是否成功
+        npm config get registry
+        // 或
+        npm info express    
+
+git   http://rogerdudler.github.io/git-guide/ (漂亮)
+      https://git.wiki.kernel.org/index.php/Aliases (别名)
+      https://www.atlassian.com/blog/git/advanced-git-aliases (详细讲解别名shell写法)
+
+  命令：
+    别名：
+      #get current branch 
+      branch-name = "!git rev-parse --abbrev-ref HEAD"  
+      # send local branch to a new branch of origin 
+	    pushl = "!sh -c \"git push -f origin $(git branch-name):$@\"" 
+      #fetch code from branch of origin 
+      fetchr = "!sh -c \"git fetch origin $@ && git checkout FETCH_HEAD\""
+
+      pushl = "!f(){ git push -f origin $(git branch-name):$@ };f"
+
+kafer https://github.com/Marak/Faker.js （mock data create）
+
+lodash
+      https://lodash.com/docs/
+
+rxjs  http://reactivex.io/rxjs/
+      https://www.learnrxjs.io/
+      https://github.com/ReactiveX/rxjs
+
+test  http://jsbin.com/gegubutele/1/edit?js,console
+      https://jsfiddle.net/btroncone/rxwnr3hh/
+
+scss  http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+
+test  https://www.sassmeister.com/
+
+angular4:
+      https://angular.io/docs
+        http://plnkr.co/edit/nkww1Ov2AWZRMHFyjhjl?p=preview (component之前传值)
+        https://blog.angular-university.io/angular2-ngmodule/ （lazyload)
+        https://cli.angular.io/  (angular-cli)
+
+
+linux http://man.linuxde.net/
+
+typescript
+      https://www.typescriptlang.org/docs
+        https://www.typescriptlang.org/docs/handbook/variable-declarations.html(比较重要的)
+
+LeetCode
+      https://leetcode.com/
+stackoverflow
+      https://stackoverflow.com/
