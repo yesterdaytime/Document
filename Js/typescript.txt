@@ -1,0 +1,44 @@
+typescript 满足所有最新的es特性：
+    ...用法：
+      ...args => []
+      {...obj} => obj( only field, not method)
+      {...obj1, ...obj2} => Object.assign(obj1, obj2)
+
+
+let obj = {
+  a: '',
+  b: 23
+}
+let {a, b} = obj;  you can get a, b
+
+let {a, b}: {a: string, b: number} = obj
+
+let {a: c, b: d} = obj ==> a = c = obj.a, b = d = obj.b
+
+enum定义 {key=value} value 不定义为enum下标
+
+type Type = string| number    or  'a'| 'b'| 'c' 
+
+typeof Class => type ...Class[field.type]
+
+interface Map<T> {
+    [key: string]: T;
+}
+let keys: keyof Map<number>; // string
+let value: Map<number>['foo']; // number
+
+let and var diff: scope of block
+
+let and const diff: obj change or not
+
+const and readonly: field change or not 
+
+interface: type and interface 
+
+let myAdd: (x: number, y: number) => number =
+    function(x: number, y: number): number { return x + y; };
+  myAdd: 函数名 number 函数返回 
+
+function vs => 保存this，和class function绑定在一起的
+
+
