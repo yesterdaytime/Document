@@ -42,3 +42,27 @@ gerrit issue
     1、chang-id issue：
 			gitdir=$(git rev-parse --git-dir); scp -p -P $(port) $(gitpath):hooks/commit-msg ${gitdir}/hooks/
 			port and gitpath is same with the ssh config 
+
+
+submodule: 	
+		新增子模块：
+			git submodule add <！--git path-->
+		clone project
+			git clone --recursive <!--git path--> 
+			or 
+			git clone <!-git path->
+			git submodule init
+			git submodule update
+		更新代码(等价于 git pull)：
+			git submodule update --remote DbConnector
+		添加代码：
+			和git process一样
+		push(submodule 检测)
+			git push --recurse-submodules=check
+			git push --recurse-submodules=on-demand	
+		改变主分支：
+			git config -f .gitmodules submodule.DbConnector.branch stable	
+
+		比较有用的操作：
+			git submodule foreach '<!-git command->'
+			对所有子模块进行操作
