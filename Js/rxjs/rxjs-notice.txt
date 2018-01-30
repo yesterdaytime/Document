@@ -1,0 +1,5 @@
+Observable 直接引用的静态方法: 
+bindCallback,bindNodeCallback,combineLatest,concat,defer,empty,forkJoin,from,fromEvent,fromEventPattern,fromPromise,generate,if,interval,merge,race,never,of,onErrorResumeNext,pairs,range,using,throw,timer,zip
+
+
+
