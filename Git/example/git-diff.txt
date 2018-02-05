@@ -1,0 +1,6 @@
+比较两个commit的文件的不同：
+  git show --decorate commit 
+  git diff commit(last1) commit(last2)
+  git whatchanged --since="1 day ago" -p
+
+

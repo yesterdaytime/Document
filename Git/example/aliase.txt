@@ -9,4 +9,5 @@
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	pushl = "!sh -c \"git push -f origin $(git branch-name):$@\""
 	fetchr = "!sh -c \"git fetch origin $@ && git checkout FETCH_HEAD\""
-# fetchr = "!f(){ git fetch origin $@ && git checkout FETCH_HEAD }; f"
+	# fetchr = "!f(){ git fetch origin $@ && git checkout FETCH_HEAD }; f"
+	
