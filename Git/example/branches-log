@@ -1,0 +1,8 @@
+branches=$(git branch -l)
+for branch in $branches
+do
+  if [[ (! -f "${branch}") &&  (! -d "${branch}") ]]
+  then
+    git log -1 HEAD --pretty=format:"%Cred${branch}: %Creset%h %Cgreen%s %Cblue%an" ${branch}
+  fi
+done
