@@ -1,6 +1,4 @@
-para=$1
-project=${1:-project-name}
-cd `pwd`/$project
+cd `pwd`
 # stash change code 
 stash_size=$(git stash list | wc -l)
 git stash
