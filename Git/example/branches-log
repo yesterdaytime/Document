@@ -3,6 +3,7 @@ for branch in $branches
 do
   if [[ (! -f "${branch}") &&  (! -d "${branch}") ]]
   then
+    git checkout ${branch}
     git log -1 HEAD --pretty=format:"%Cred${branch}: %Creset%h %Cgreen%s %Cblue%an" ${branch}
   fi
 done
